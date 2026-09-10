@@ -1,0 +1,325 @@
+<title>Diego Nodado — EA / Automation Specialist / Sales Agent</title>
+<meta name="description" content="Diego Nodado — Executive Assistant, Automation Specialist, and Sales Agent." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --bg-void: #060c16;
+    --bg-surface: #08101e;
+    --bg-card: #0d1a2e;
+    --bg-card-hi: #10203a;
+    --accent: #10d97e;
+    --accent-deep: #0ab868;
+    --accent-light: #34e896;
+    --text-primary: #ffffff;
+    --text-secondary: #b6c2d1;
+    --text-muted: #6b7889;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(16, 217, 126, 0.35);
+    --scrollbar-track: #08101e;
+    --scrollbar-thumb: #10d97e;
+    --scrollbar-thumb-hover: #0ab868;
+  }
+
+  * { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; transition: background .3s; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg-void);
+    color: var(--text-primary);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-display { font-family: Fraunces, ui-serif, Georgia, serif; }
+
+  .bg-field {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 900px 600px at 8% -5%, rgba(16, 217, 126, 0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 15%, rgba(10, 184, 104, 0.10), transparent 55%),
+      radial-gradient(ellipse 800px 700px at 50% 100%, rgba(16, 217, 126, 0.07), transparent 60%);
+  }
+
+  .bg-noise {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container-page { position: relative; z-index: 2; }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--border-accent);
+    border-radius: 14px;
+    box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6), 0 8px 24px -12px rgba(16, 217, 126, 0.08);
+  }
+
+  .pill {
+    background: rgba(16, 217, 126, 0.08);
+    border: 1px solid var(--border-accent);
+    border-radius: 999px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(16, 217, 126, 0.6);
+    animation: pulse-dot 2.4s ease-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%   { box-shadow: 0 0 0 0 rgba(16, 217, 126, 0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(16, 217, 126, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 217, 126, 0); }
+  }
+
+  .btn-primary {
+    background: linear-gradient(180deg, var(--accent-light), var(--accent-deep));
+    color: #06120c;
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 220ms ease, filter 200ms ease;
+    box-shadow: 0 14px 30px -12px rgba(16, 217, 126, 0.45);
+  }
+  .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.06); }
+  .btn-primary:active { transform: translateY(0) scale(0.98); }
+  .btn-primary:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 3px; }
+
+  .btn-ghost {
+    color: var(--text-secondary);
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), color 200ms ease;
+  }
+  .btn-ghost:hover { color: var(--text-primary); transform: translateY(-1px); }
+  .btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  .capability-card { transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease, box-shadow 240ms ease; }
+  .capability-card:hover {
+    transform: translateY(-4px);
+    border-left-color: var(--accent);
+    box-shadow: 0 26px 50px -22px rgba(0, 0, 0, 0.65), 0 10px 30px -10px rgba(16, 217, 126, 0.18);
+  }
+
+  .chip {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    transition: border-color 200ms ease, color 200ms ease, transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .chip:hover { border-color: var(--border-accent); color: var(--text-primary); transform: translateY(-2px); }
+  a.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  a.chip:active { transform: translateY(0) scale(0.97); }
+
+  .photo-frame {
+    position: relative;
+    isolation: isolate;
+  }
+  .photo-frame::before {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(16, 217, 126, 0.35), transparent 65%);
+    filter: blur(20px);
+  }
+  .photo-frame img {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+  }
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, transparent 55%, rgba(6, 12, 22, 0.55) 100%);
+    pointer-events: none;
+  }
+
+  .hero-enter { animation: hero-in 900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-enter-1 { animation-delay: 40ms; }
+  .hero-enter-2 { animation-delay: 140ms; }
+  .hero-enter-3 { animation-delay: 240ms; }
+  .hero-enter-4 { animation-delay: 340ms; }
+  .hero-enter-photo { animation: hero-in-photo 1000ms cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 200ms; }
+  @keyframes hero-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes hero-in-photo {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .dot, .hero-enter, .hero-enter-photo, .btn-primary, .btn-ghost, .capability-card, .chip {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<div class="bg-field"></div>
+<div class="bg-noise"></div>
+
+<div class="container-page">
+
+  <nav class="sticky top-0 z-20 border-b" style="background: rgba(6,12,22,0.72); backdrop-filter: blur(10px); border-color: var(--border-subtle);">
+    <div class="max-w-5xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg text-sm font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: #06120c;">DN</span>
+        <span class="text-sm font-medium tracking-tight" style="color: var(--text-secondary);">Diego Nodado</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="#capabilities" class="hidden sm:inline text-sm btn-ghost">What I do</a>
+        <a href="#contact" class="hidden sm:inline text-sm btn-ghost">Contact</a>
+        <a href="#contact" class="btn-primary text-sm font-semibold px-4 py-2 rounded-full">Get in touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="max-w-5xl mx-auto px-6 md:px-8 pt-14 md:pt-20">
+    <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-10 items-center">
+
+      <div>
+        <div class="hero-enter hero-enter-1 pill inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium mb-7" style="color: var(--accent-light);">
+          <span class="dot"></span>
+          Open to new opportunities
+        </div>
+
+        <h1 class="hero-enter hero-enter-2 font-display leading-[1.04] tracking-tight" style="font-size: clamp(2.5rem, 5.2vw, 4rem);">
+          <span class="block font-bold" style="color: var(--text-primary);">Diego Nodado</span>
+          <span class="block font-bold" style="color: var(--accent);">runs the operations</span>
+          <span class="block italic font-medium mt-1" style="color: var(--text-secondary); font-size: 0.72em;">so the business runs on time.</span>
+        </h1>
+
+        <p class="hero-enter hero-enter-3 mt-7 max-w-[52ch] text-[1.05rem] leading-[1.7]" style="color: var(--text-secondary);">
+          I'm an executive assistant, automation builder, and sales agent — I keep inboxes at zero, calendars conflict-free, and workflows running without anyone babysitting them. I build the system, then I run it.
+        </p>
+
+        <div class="hero-enter hero-enter-4 mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a href="#contact" class="btn-primary font-semibold px-6 py-3 rounded-full text-sm">Get in touch</a>
+          <a href="#capabilities" class="btn-ghost text-sm font-medium">What I do ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-enter-photo photo-frame w-48 md:w-full max-w-[280px] mx-auto md:mx-0 justify-self-center md:justify-self-end">
+        <img src="BRAND%20ASSETS/ME.png" alt="Portrait of Diego Nodado" class="w-full aspect-[4/5] object-cover rounded-2xl" />
+      </div>
+    </div>
+
+    <div class="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden" style="border: 1px solid var(--border-subtle); background: var(--bg-surface);">
+      <div class="px-5 py-5 md:py-6" style="border-bottom: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">Executive Support</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Inbox, calendar, travel, docs</div>
+      </div>
+      <div class="px-5 py-5 md:py-6" style="border-bottom: 1px solid var(--border-subtle);">
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">Automation</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">n8n, Zapier, Make workflows</div>
+      </div>
+      <div class="px-5 py-5 md:py-6" style="border-right: 1px solid var(--border-subtle);">
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">Sales</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Outreach, CRM, closing</div>
+      </div>
+      <div class="px-5 py-5 md:py-6">
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">Operations</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Process, systems, follow-through</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="capabilities" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">What I do</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Three disciplines, one focus: fewer things falling through the cracks.</p>
+
+    <div class="mt-9 grid md:grid-cols-3 gap-5">
+      <div class="capability-card card p-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="16" rx="2.5"></rect>
+            <path d="M3 10h18"></path>
+            <path d="M8 3v4M16 3v4"></path>
+            <path d="M9 15l2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Executive Support</h3>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">Calendar and inbox management, travel booking, document prep, meeting coordination. I keep the day organized so you can focus on decisions, not logistics.</p>
+      </div>
+
+      <div class="capability-card card p-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="6" r="2.5"></circle>
+            <circle cx="19" cy="18" r="2.5"></circle>
+            <circle cx="19" cy="6" r="2.5"></circle>
+            <path d="M7.3 6h9.2M19 8.5v7"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Workflow Automation</h3>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">I design and build automations in n8n, Zapier, and Make that connect your tools and remove repetitive manual work, so tasks run themselves in the background.</p>
+      </div>
+
+      <div class="capability-card card p-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17l5-5 4 4 8-9"></path>
+            <path d="M15 7h5v5"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Sales & Client Relations</h3>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">Outbound outreach, CRM upkeep, follow-ups, and closing conversations. I move leads through the pipeline and keep client relationships warm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 md:px-8 pb-8 md:pb-10">
+    <h2 class="text-sm font-semibold tracking-tight" style="color: var(--text-muted);">Tools I work in</h2>
+    <div class="mt-4 flex flex-wrap gap-2.5">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Google Workspace</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Notion</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Slack</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zapier</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">HubSpot</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Airtable</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Calendly</span>
+    </div>
+  </section>
+
+  <footer id="contact" class="border-t" style="border-color: var(--border-subtle); background: var(--bg-surface);">
+    <div class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20">
+      <div class="max-w-xl">
+        <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.7rem, 3.2vw, 2.3rem); color: var(--text-primary);">Let's talk</h2>
+        <p class="mt-3 text-[1rem] leading-relaxed" style="color: var(--text-secondary);">Tell me about the role, and I'll reply within a day.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="mailto:dnodadoshopify@gmail.com" class="btn-primary font-semibold px-6 py-3 rounded-full text-sm">Email me</a>
+          <a href="#" class="chip px-6 py-3 rounded-full text-sm font-medium">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style="border-top: 1px solid var(--border-subtle);">
+        <div class="flex items-center gap-2.5">
+          <span class="flex items-center justify-center w-7 h-7 rounded-md text-xs font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: #06120c;">DN</span>
+          <span class="text-sm" style="color: var(--text-muted);">Diego Nodado © 2026</span>
+        </div>
+        <span class="text-sm" style="color: var(--text-muted);">Executive Assistant · Automation Specialist · Sales Agent</span>
+      </div>
+    </div>
+  </footer>
+
+</div>

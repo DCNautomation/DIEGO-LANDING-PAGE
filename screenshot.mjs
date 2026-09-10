@@ -1,0 +1,27 @@
+import puppeteer from "puppeteer";
+import fs from "node:fs";
+import path from "node:path";
+
+const url = process.argv[2] || "http://localhost:3000";
+const label = process.argv[3];
+
+const outDir = path.join(process.cwd(), "temporary screenshots");
+fs.mkdirSync(outDir, { recursive: true });
+
+let n = 1;
+const existing = fs.readdirSync(outDir).filter((f) => /^screenshot-(\d+)/.test(f));
+if (existing.length) {
+  n = Math.max(...existing.map((f) => parseInt(f.match(/^screenshot-(\d+)/)[1], 10))) + 1;
+}
+
+const filename = label ? `screenshot-${n}-${label}.png` : `screenshot-${n}.png`;
+const outPath = path.join(outDir, filename);
+
+const browser = await puppeteer.launch({ headless: "new" });
+const page = await browser.newPage();
+await page.setViewport({ width: 480, height: 900 });
+await page.goto(url, { waitUntil: "networkidle0" });
+await page.screenshot({ path: outPath, fullPage: true });
+await browser.close();
+
+console.log(`Saved ${outPath}`);
