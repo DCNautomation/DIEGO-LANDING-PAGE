@@ -1,5 +1,5 @@
-<title>Diego Nodado — EA / Automation Specialist / Sales Agent</title>
-<meta name="description" content="Diego Nodado — Executive Assistant, Automation Specialist, and Sales Agent." />
+<title>Diego Nodado — Executive Assistant & AI Automation Specialist</title>
+<meta name="description" content="Diego Nodado — Executive Assistant and AI Automation Specialist. n8n workflows, AI agent integrations, and CRM systems." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -167,10 +167,109 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .dot, .hero-enter, .hero-enter-photo, .btn-primary, .btn-ghost, .capability-card, .chip {
+    .dot, .hero-enter, .hero-enter-photo, .btn-primary, .btn-ghost, .capability-card, .chip, .marquee-track {
       animation: none !important;
       transition: none !important;
     }
+    .marquee-wrap { overflow-x: auto; }
+  }
+
+  .marquee-wrap {
+    overflow: hidden;
+    position: relative;
+    padding: 16px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    will-change: transform;
+  }
+  .marquee-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .marquee-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 200ms ease, color 200ms ease, transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .marquee-btn:hover { border-color: var(--border-accent); color: var(--text-primary); transform: translateY(-1px); }
+  .marquee-btn:active { transform: translateY(0) scale(0.96); }
+  .marquee-btn.is-active { border-color: var(--border-accent); color: var(--accent-light); }
+  .marquee-item {
+    flex-shrink: 0;
+    height: 220px;
+    width: auto;
+    border-radius: 14px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6), 0 8px 24px -12px rgba(16, 217, 126, 0.08);
+    object-fit: cover;
+    background: var(--bg-card);
+    cursor: zoom-in;
+    transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 260ms ease;
+  }
+  .marquee-item:hover {
+    transform: scale(1.14);
+    z-index: 5;
+    position: relative;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.75), 0 0 0 1px var(--border-accent);
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 5vw;
+    background: rgba(6, 12, 22, 0.88);
+    backdrop-filter: blur(6px);
+    cursor: zoom-out;
+  }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+  .lightbox-close:hover { color: var(--text-primary); border-color: var(--border-accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-item { transition: none !important; }
   }
 </style>
 
@@ -187,6 +286,7 @@
       </a>
       <div class="flex items-center gap-6">
         <a href="#capabilities" class="hidden sm:inline text-sm btn-ghost">What I do</a>
+        <a href="#projects" class="hidden sm:inline text-sm btn-ghost">Projects</a>
         <a href="#contact" class="hidden sm:inline text-sm btn-ghost">Contact</a>
         <a href="#contact" class="btn-primary text-sm font-semibold px-4 py-2 rounded-full">Get in touch</a>
       </div>
@@ -209,7 +309,7 @@
         </h1>
 
         <p class="hero-enter hero-enter-3 mt-7 max-w-[52ch] text-[1.05rem] leading-[1.7]" style="color: var(--text-secondary);">
-          I'm an executive assistant, automation builder, and sales agent — I keep inboxes at zero, calendars conflict-free, and workflows running without anyone babysitting them. I build the system, then I run it.
+          I'm an executive assistant and AI automation specialist — I build n8n workflows, AI agent integrations, and CRM systems that keep inboxes at zero, calendars conflict-free, and pipelines moving without anyone babysitting them. I build the system, then I run it.
         </p>
 
         <div class="hero-enter hero-enter-4 mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -229,16 +329,16 @@
         <div class="text-xs mt-1" style="color: var(--text-muted);">Inbox, calendar, travel, docs</div>
       </div>
       <div class="px-5 py-5 md:py-6" style="border-bottom: 1px solid var(--border-subtle);">
-        <div class="text-sm font-semibold" style="color: var(--text-primary);">Automation</div>
-        <div class="text-xs mt-1" style="color: var(--text-muted);">n8n, Zapier, Make workflows</div>
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">AI & Automation</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">n8n, AI agents, webhooks, APIs</div>
       </div>
       <div class="px-5 py-5 md:py-6" style="border-right: 1px solid var(--border-subtle);">
-        <div class="text-sm font-semibold" style="color: var(--text-primary);">Sales</div>
-        <div class="text-xs mt-1" style="color: var(--text-muted);">Outreach, CRM, closing</div>
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">CRM Systems</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">HubSpot, Salesforce, GoHighLevel</div>
       </div>
       <div class="px-5 py-5 md:py-6">
-        <div class="text-sm font-semibold" style="color: var(--text-primary);">Operations</div>
-        <div class="text-xs mt-1" style="color: var(--text-muted);">Process, systems, follow-through</div>
+        <div class="text-sm font-semibold" style="color: var(--text-primary);">Aviation Background</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Safety compliance & audits</div>
       </div>
     </div>
   </header>
@@ -258,7 +358,7 @@
           </svg>
         </div>
         <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Executive Support</h3>
-        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">Calendar and inbox management, travel booking, document prep, meeting coordination. I keep the day organized so you can focus on decisions, not logistics.</p>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">Calendar and multi-timezone scheduling, inbox management/triage, travel planning, meeting prep and minutes. I keep the day organized so you can focus on decisions, not logistics.</p>
       </div>
 
       <div class="capability-card card p-6">
@@ -270,8 +370,8 @@
             <path d="M7.3 6h9.2M19 8.5v7"></path>
           </svg>
         </div>
-        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Workflow Automation</h3>
-        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">I design and build automations in n8n, Zapier, and Make that connect your tools and remove repetitive manual work, so tasks run themselves in the background.</p>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">AI & Workflow Automation</h3>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">n8n workflow design, webhook triggers, API integrations, and AI Agent integration for chatbots and lead routing. I build form-to-CRM and appointment-booking automations that cut down manual work.</p>
       </div>
 
       <div class="capability-card card p-6">
@@ -281,23 +381,126 @@
             <path d="M15 7h5v5"></path>
           </svg>
         </div>
-        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Sales & Client Relations</h3>
-        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">Outbound outreach, CRM upkeep, follow-ups, and closing conversations. I move leads through the pipeline and keep client relationships warm.</p>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">CRM & Pipeline Management</h3>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">HubSpot, Salesforce, Zoho, GoHighLevel, Pipedrive, and Brivity (certified) — data entry, deduplication, lead segmentation, and pipeline/deal tracking.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Automation projects</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">A sample of the n8n workflows I've designed and built end to end.</p>
+
+    <div class="mt-9 grid md:grid-cols-2 gap-5">
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Facebook Chatbot with AI Agent</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Webhook handles GET verification and POST messages; an AI Agent (Groq, with memory and tool access) pulls a knowledge base doc and replies via the Facebook Graph API.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Lead Router & Notifier</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Reads leads from Google Sheets, branches them through conditional checks, sends Gmail notifications, and updates row status once processed.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Lead Enrichment & CRM Sync</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Webhook captures new form submissions, enriches contact data via a third-party API, dedupes, and pushes clean records into HubSpot or Airtable.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Meeting Notes & Action Item Extractor</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">An AI Agent summarizes an uploaded meeting transcript, extracts action items into a project management tool, and emails a summary to attendees.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Job Application Tracker & Resume Checker</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Parses incoming resumes on submission, scores candidates against role criteria, updates a tracking sheet, and auto-sends acknowledgment emails.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Invoice Processing Automation</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Extracts key data from incoming invoices via OCR/AI parsing, validates against budget, and routes for Slack/email approval before logging to accounting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 md:px-8 pb-16 md:pb-20">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Recent work</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Live builds from my own toolkit — systems I designed, built, and run end to end.</p>
+
+    <div class="mt-9 grid md:grid-cols-2 gap-5">
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Web Research & Scraping Automation</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Built a Firecrawl-powered scraping system for pulling clean content, screenshots, and structured data off any site — used for market research, competitor analysis, and content sourcing.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Trigger.dev Automation Builder</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Design and deploy scheduled and event-driven TypeScript automations on Trigger.dev, connecting APIs to ClickUp, email, and Slack for hands-off task execution.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Newsletter Automation (WAT Framework)</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Built an AI-agent-orchestrated newsletter pipeline that separates reasoning from execution — deterministic Python tools handle sends and formatting while the agent handles content decisions, keeping the system reliable at scale.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Personal AI Skills Library</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Authored and maintain a version-controlled library of reusable AI agent skills and SOPs, published globally so any project can call on the same tested workflows.</p>
+      </div>
+    </div>
+    <p class="mt-6 text-sm" style="color: var(--text-muted);">Full workflow exports, screen recordings, and source available on request.</p>
+
+    <div class="mt-9 marquee-wrap" id="marquee-wrap">
+      <div class="marquee-track" id="marquee-track">
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-tasks-list.png" alt="Trigger.dev dashboard showing the dental-leads automation tasks" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run — 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/clickup-dental-leads-list.png" alt="Auto-generated ClickUp task list from the lead-gen run" />
+        <img class="marquee-item" src="https://placehold.co/380x220/0d1a2e/6b7889?text=More+coming+soon" alt="More proof coming soon" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-tasks-list.png" alt="Trigger.dev dashboard showing the dental-leads automation tasks" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run — 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/clickup-dental-leads-list.png" alt="Auto-generated ClickUp task list from the lead-gen run" />
+        <img class="marquee-item" src="https://placehold.co/380x220/0d1a2e/6b7889?text=More+coming+soon" alt="More proof coming soon" />
+      </div>
+    </div>
+
+    <div class="marquee-controls">
+      <button type="button" class="marquee-btn" id="marquee-prev" aria-label="Roll backward, faster">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Previous
+      </button>
+      <button type="button" class="marquee-btn" id="marquee-next" aria-label="Roll forward, faster">
+        Next
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </section>
 
   <section class="max-w-5xl mx-auto px-6 md:px-8 pb-8 md:pb-10">
     <h2 class="text-sm font-semibold tracking-tight" style="color: var(--text-muted);">Tools I work in</h2>
     <div class="mt-4 flex flex-wrap gap-2.5">
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Google Workspace</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Notion</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Slack</span>
       <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zapier</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Google Workspace</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Microsoft 365</span>
       <span class="chip px-3.5 py-1.5 rounded-full text-sm">HubSpot</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Salesforce</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zoho</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">GoHighLevel</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pipedrive</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Brivity (Certified)</span>
       <span class="chip px-3.5 py-1.5 rounded-full text-sm">Airtable</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Calendly</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Slack</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zoom</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Asana</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Trello</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">ClickUp</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Notion</span>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 md:px-8 pb-16 md:pb-20">
+    <div class="card p-6 md:p-7 flex flex-col md:flex-row gap-5 md:items-center">
+      <div class="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(16,217,126,0.1);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 16l20-8-8 20-2-9-9-2z"></path>
+        </svg>
+      </div>
+      <div>
+        <h3 class="font-semibold text-base" style="color: var(--text-primary);">Before automation: aviation safety & compliance</h3>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">I spent two years as an Aviation Safety & Compliance Officer at Lufthansa Technik Philippines — writing safety policy, leading incident investigations, running audits, and keeping technical logbooks to full regulatory standard. That discipline for structured documentation and process control is exactly what carries into every workflow and CRM system I build today.</p>
+      </div>
     </div>
   </section>
 
@@ -317,9 +520,119 @@
           <span class="flex items-center justify-center w-7 h-7 rounded-md text-xs font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: #06120c;">DN</span>
           <span class="text-sm" style="color: var(--text-muted);">Diego Nodado © 2026</span>
         </div>
-        <span class="text-sm" style="color: var(--text-muted);">Executive Assistant · Automation Specialist · Sales Agent</span>
+        <span class="text-sm" style="color: var(--text-muted);">Executive Assistant · AI Automation Specialist</span>
       </div>
     </div>
   </footer>
 
 </div>
+
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  (function () {
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImg = document.getElementById("lightbox-img");
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "";
+      lightbox.hidden = false;
+    }
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+    }
+
+    document.querySelectorAll(".marquee-item").forEach(function (img) {
+      img.addEventListener("click", function () {
+        openLightbox(img.src, img.alt);
+      });
+    });
+
+    lightbox.addEventListener("click", closeLightbox);
+    document.getElementById("lightbox-close").addEventListener("click", function (e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  })();
+
+  (function () {
+    var wrap = document.getElementById("marquee-wrap");
+    var track = document.getElementById("marquee-track");
+    var prevBtn = document.getElementById("marquee-prev");
+    var nextBtn = document.getElementById("marquee-next");
+    if (!wrap || !track) return;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+
+    var BASE_SPEED = 45;
+    var BOOST_SPEED = 170;
+    var BOOST_DURATION = 1100;
+
+    var direction = 1;
+    var speed = BASE_SPEED;
+    var boostTimer = null;
+    var offset = 0;
+    var half = 0;
+    var paused = false;
+    var lastTime = null;
+
+    function measure() {
+      half = track.scrollWidth / 2;
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    track.querySelectorAll("img").forEach(function (img) {
+      if (!img.complete) img.addEventListener("load", measure);
+    });
+
+    function setActive(btn) {
+      prevBtn.classList.toggle("is-active", btn === prevBtn);
+      nextBtn.classList.toggle("is-active", btn === nextBtn);
+      if (boostTimer) clearTimeout(boostTimer);
+      boostTimer = setTimeout(function () {
+        speed = BASE_SPEED;
+        prevBtn.classList.remove("is-active");
+        nextBtn.classList.remove("is-active");
+      }, BOOST_DURATION);
+    }
+
+    prevBtn.addEventListener("click", function () {
+      direction = -1;
+      speed = BOOST_SPEED;
+      setActive(prevBtn);
+    });
+    nextBtn.addEventListener("click", function () {
+      direction = 1;
+      speed = BOOST_SPEED;
+      setActive(nextBtn);
+    });
+
+    wrap.addEventListener("mouseenter", function () { paused = true; });
+    wrap.addEventListener("mouseleave", function () { paused = false; });
+
+    function tick(time) {
+      if (lastTime === null) lastTime = time;
+      var dt = (time - lastTime) / 1000;
+      lastTime = time;
+
+      if (!paused && half > 0) {
+        offset += direction * speed * dt;
+        offset = ((offset % half) + half) % half;
+        track.style.transform = "translateX(" + -offset + "px)";
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+</script>
