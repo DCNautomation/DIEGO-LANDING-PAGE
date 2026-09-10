@@ -1,5 +1,5 @@
-<title>Diego Nodado — Executive Assistant & AI Automation Specialist</title>
-<meta name="description" content="Diego Nodado — Executive Assistant and AI Automation Specialist. n8n workflows, AI agent integrations, and CRM systems." />
+<title>Diego Nodado, Executive Assistant & AI Automation Specialist</title>
+<meta name="description" content="Diego Nodado, Executive Assistant and AI Automation Specialist. n8n workflows, AI agent integrations, and CRM systems." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -270,6 +270,43 @@
 
   @media (prefers-reduced-motion: reduce) {
     .marquee-item { transition: none !important; }
+    .reveal-armed .skill-item, .reveal-armed .tool-group { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* Visible by default (no-JS / JS-failure safe). JS arms the hidden-then-reveal
+     animation only once it has successfully attached the scroll observer. */
+  .reveal-armed .skill-item, .reveal-armed .tool-group {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1), transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-armed.is-visible .skill-item, .reveal-armed.is-visible .tool-group { opacity: 1; transform: translateY(0); }
+
+  .skill-item:nth-child(1)  { transition-delay: 40ms; }
+  .skill-item:nth-child(2)  { transition-delay: 85ms; }
+  .skill-item:nth-child(3)  { transition-delay: 130ms; }
+  .skill-item:nth-child(4)  { transition-delay: 175ms; }
+  .skill-item:nth-child(5)  { transition-delay: 220ms; }
+  .skill-item:nth-child(6)  { transition-delay: 265ms; }
+  .skill-item:nth-child(7)  { transition-delay: 310ms; }
+  .skill-item:nth-child(8)  { transition-delay: 355ms; }
+  .skill-item:nth-child(9)  { transition-delay: 400ms; }
+  .skill-item:nth-child(10) { transition-delay: 445ms; }
+
+  .tool-group:nth-child(1) { transition-delay: 40ms; }
+  .tool-group:nth-child(2) { transition-delay: 90ms; }
+  .tool-group:nth-child(3) { transition-delay: 140ms; }
+  .tool-group:nth-child(4) { transition-delay: 190ms; }
+  .tool-group:nth-child(5) { transition-delay: 240ms; }
+  .tool-group:nth-child(6) { transition-delay: 290ms; }
+  .tool-group:nth-child(7) { transition-delay: 340ms; }
+  .tool-group:nth-child(8) { transition-delay: 390ms; }
+
+  .skill-card { transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease, box-shadow 240ms ease; }
+  .skill-card:hover {
+    transform: translateY(-3px);
+    border-left-color: var(--accent);
+    box-shadow: 0 26px 50px -22px rgba(0, 0, 0, 0.65), 0 10px 30px -10px rgba(16, 217, 126, 0.18);
   }
 </style>
 
@@ -309,7 +346,7 @@
         </h1>
 
         <p class="hero-enter hero-enter-3 mt-7 max-w-[52ch] text-[1.05rem] leading-[1.7]" style="color: var(--text-secondary);">
-          I'm an executive assistant and AI automation specialist — I build n8n workflows, AI agent integrations, and CRM systems that keep inboxes at zero, calendars conflict-free, and pipelines moving without anyone babysitting them. I build the system, then I run it.
+          I'm an executive assistant and AI automation specialist. I build n8n workflows, AI agent integrations, and CRM systems that keep inboxes at zero, calendars conflict-free, and pipelines moving without anyone babysitting them. I build the system, then I run it.
         </p>
 
         <div class="hero-enter hero-enter-4 mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -382,7 +419,7 @@
           </svg>
         </div>
         <h3 class="font-semibold text-lg" style="color: var(--text-primary);">CRM & Pipeline Management</h3>
-        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">HubSpot, Salesforce, Zoho, GoHighLevel, Pipedrive, and Brivity (certified) — data entry, deduplication, lead segmentation, and pipeline/deal tracking.</p>
+        <p class="mt-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">HubSpot, Salesforce, Zoho, GoHighLevel, Pipedrive, and Brivity (certified): data entry, deduplication, lead segmentation, and pipeline/deal tracking.</p>
       </div>
     </div>
   </section>
@@ -421,12 +458,12 @@
 
   <section class="max-w-5xl mx-auto px-6 md:px-8 pb-16 md:pb-20">
     <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Recent work</h2>
-    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Live builds from my own toolkit — systems I designed, built, and run end to end.</p>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Live builds from my own toolkit: systems I designed, built, and run end to end.</p>
 
     <div class="mt-9 grid md:grid-cols-2 gap-5">
       <div class="card p-6">
         <h3 class="font-semibold text-base" style="color: var(--text-primary);">Web Research & Scraping Automation</h3>
-        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Built a Firecrawl-powered scraping system for pulling clean content, screenshots, and structured data off any site — used for market research, competitor analysis, and content sourcing.</p>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Built a Firecrawl-powered scraping system for pulling clean content, screenshots, and structured data off any site, used for market research, competitor analysis, and content sourcing.</p>
       </div>
       <div class="card p-6">
         <h3 class="font-semibold text-base" style="color: var(--text-primary);">Trigger.dev Automation Builder</h3>
@@ -434,7 +471,7 @@
       </div>
       <div class="card p-6">
         <h3 class="font-semibold text-base" style="color: var(--text-primary);">Newsletter Automation (WAT Framework)</h3>
-        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Built an AI-agent-orchestrated newsletter pipeline that separates reasoning from execution — deterministic Python tools handle sends and formatting while the agent handles content decisions, keeping the system reliable at scale.</p>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Built an AI-agent-orchestrated newsletter pipeline that separates reasoning from execution: deterministic Python tools handle sends and formatting while the agent handles content decisions, keeping the system reliable at scale.</p>
       </div>
       <div class="card p-6">
         <h3 class="font-semibold text-base" style="color: var(--text-primary);">Personal AI Skills Library</h3>
@@ -446,11 +483,11 @@
     <div class="mt-9 marquee-wrap" id="marquee-wrap">
       <div class="marquee-track" id="marquee-track">
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-tasks-list.png" alt="Trigger.dev dashboard showing the dental-leads automation tasks" />
-        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run — 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run: 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/clickup-dental-leads-list.png" alt="Auto-generated ClickUp task list from the lead-gen run" />
         <img class="marquee-item" src="https://placehold.co/380x220/0d1a2e/6b7889?text=More+coming+soon" alt="More proof coming soon" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-tasks-list.png" alt="Trigger.dev dashboard showing the dental-leads automation tasks" />
-        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run — 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
+        <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run: 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/clickup-dental-leads-list.png" alt="Auto-generated ClickUp task list from the lead-gen run" />
         <img class="marquee-item" src="https://placehold.co/380x220/0d1a2e/6b7889?text=More+coming+soon" alt="More proof coming soon" />
       </div>
@@ -468,25 +505,227 @@
     </div>
   </section>
 
-  <section class="max-w-5xl mx-auto px-6 md:px-8 pb-8 md:pb-10">
-    <h2 class="text-sm font-semibold tracking-tight" style="color: var(--text-muted);">Tools I work in</h2>
-    <div class="mt-4 flex flex-wrap gap-2.5">
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Google Workspace</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Microsoft 365</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">HubSpot</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Salesforce</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zoho</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">GoHighLevel</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pipedrive</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Brivity (Certified)</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Airtable</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Slack</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zoom</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Asana</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Trello</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">ClickUp</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Notion</span>
+  <section id="skills" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Skills</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">What that looks like day to day, inside each discipline.</p>
+
+    <div class="mt-9 grid md:grid-cols-2 gap-5">
+      <div class="skill-card card p-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="16" rx="2.5"></rect>
+            <path d="M3 10h18"></path>
+            <path d="M8 3v4M16 3v4"></path>
+            <path d="M9 15l2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">Executive Support</h3>
+        <ul class="mt-4 space-y-3">
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Multi-timezone calendar management and meeting prep</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Inbox triage, filtering, and zero-inbox systems</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Travel planning and itinerary coordination</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Expense tracking and reporting</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Document prep, proofreading, and light bookkeeping</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Meeting notes, minutes, and follow-up tracking</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Vendor and contractor coordination</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Confidentiality and discretion with sensitive data</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skill-card card p-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="6" r="2.5"></circle>
+            <circle cx="19" cy="18" r="2.5"></circle>
+            <circle cx="19" cy="6" r="2.5"></circle>
+            <path d="M7.3 6h9.2M19 8.5v7"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg" style="color: var(--text-primary);">AI Automation & Workflow Engineering</h3>
+        <ul class="mt-4 space-y-3">
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Workflow mapping and SOP documentation</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>REST API and webhook integration, including OAuth</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Prompt engineering and multi-agent orchestration</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Data mapping and transformation across JSON and CSV</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Custom logic scripting in JavaScript and Python</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Spreadsheet and database logic: lookups, filters, joins</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Error handling, retries, and monitoring/alerting design</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Git version control for workflow and config backups</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Testing and QA before anything reaches production</span>
+          </li>
+          <li class="skill-item flex gap-2.5 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Light UX for internal tools, forms, and dashboards</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools" class="max-w-5xl mx-auto px-6 md:px-8 pb-16 md:pb-20">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Tools & platforms</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Grouped by where each one sits in the stack.</p>
+
+    <div class="mt-9 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Executive operations</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Google Workspace</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Microsoft 365</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Calendly</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Cal.com</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Motion</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Reclaim.ai</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">DocuSign</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">PandaDoc</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Dropbox</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Box</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Automation platforms</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zapier</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Make</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Bardeen</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pabbly Connect</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Google Apps Script</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Power Automate</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">AI & LLM engineering</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Claude</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">OpenAI Assistants</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">LangChain</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">LlamaIndex</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pinecone / Weaviate</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Supabase Vector</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Perplexity</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Data & web scraping</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Apify</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Phantombuster</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Postman</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">BigQuery</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Segment</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">CRM & sales</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">HubSpot</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Salesforce</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zoho</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">GoHighLevel</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pipedrive</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Brivity (Certified)</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">ActiveCampaign</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Mailchimp / ConvertKit</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Comms & meetings</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Slack</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Zoom</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Microsoft Teams</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Fireflies.ai / Otter.ai</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Grain</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Loom</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Krisp</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Twilio</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">WhatsApp Business API</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Dev & infrastructure</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">GitHub</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Retool / Bubble / Xano</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Webflow</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Cloudflare Workers</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">AWS Lambda</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Metabase / Looker Studio</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Sentry / UptimeRobot</span>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Project management & docs</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Notion</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">ClickUp</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Asana</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Trello</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Miro / Whimsical</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Typeform / Jotform</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Canva</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Todoist / Sunsama</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -499,7 +738,7 @@
       </div>
       <div>
         <h3 class="font-semibold text-base" style="color: var(--text-primary);">Before automation: aviation safety & compliance</h3>
-        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">I spent two years as an Aviation Safety & Compliance Officer at Lufthansa Technik Philippines — writing safety policy, leading incident investigations, running audits, and keeping technical logbooks to full regulatory standard. That discipline for structured documentation and process control is exactly what carries into every workflow and CRM system I build today.</p>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">I spent two years as an Aviation Safety & Compliance Officer at Lufthansa Technik Philippines, writing safety policy, leading incident investigations, running audits, and keeping technical logbooks to full regulatory standard. That discipline for structured documentation and process control is exactly what carries into every workflow and CRM system I build today.</p>
       </div>
     </div>
   </section>
@@ -634,5 +873,27 @@
       requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
+  })();
+
+  (function () {
+    var targets = document.querySelectorAll("#skills, #tools");
+    if (!targets.length) return;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    targets.forEach(function (el) {
+      el.classList.add("reveal-armed");
+      io.observe(el);
+    });
   })();
 </script>
