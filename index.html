@@ -308,6 +308,89 @@
     border-left-color: var(--accent);
     box-shadow: 0 26px 50px -22px rgba(0, 0, 0, 0.65), 0 10px 30px -10px rgba(16, 217, 126, 0.18);
   }
+
+  .tv-frame {
+    border-radius: 14px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.75), 0 10px 30px -14px rgba(16, 217, 126, 0.12);
+  }
+  .tv-frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+  }
+  .tv-frame-bar i { width: 9px; height: 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); display: block; }
+  .tv-frame-bar span { margin-left: 8px; font-size: 0.72rem; color: var(--text-muted); }
+  .tv-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+  }
+  .tv-thumb {
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    cursor: zoom-in;
+    color: inherit;
+  }
+  .tv-thumb .tv-frame { transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease; }
+  .tv-thumb:hover .tv-frame { transform: translateY(-3px); border-color: var(--border-accent); }
+  .tv-thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 14px; }
+  .tv-thumb img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+  .tv-shot-crop { aspect-ratio: 16 / 9; object-fit: cover; object-position: top center; }
+
+  .yt {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #060d18 center / cover no-repeat;
+    cursor: pointer;
+    box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.75), 0 10px 30px -14px rgba(16, 217, 126, 0.12);
+  }
+  .yt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 13, 24, 0.7), rgba(6, 13, 24, 0.15));
+  }
+  .yt-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 68px;
+    height: 68px;
+    margin: -34px 0 0 -34px;
+    border-radius: 999px;
+    background: linear-gradient(160deg, var(--accent-light), var(--accent-deep));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 30px -10px rgba(16, 217, 126, 0.45);
+    transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .yt:hover .yt-play { transform: scale(1.08); }
+  .yt:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .yt-play { transition: none !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tv-thumb .tv-frame { transition: none !important; }
+  }
 </style>
 
 <div class="bg-field"></div>
@@ -505,6 +588,251 @@
     </div>
   </section>
 
+  <section id="trusvana" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Trusvana: a real estate CRM I built</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">A working CRM for real estate teams, designed and coded from scratch. Screenshots below use placeholder data.</p>
+
+    <p class="mt-6 max-w-[68ch] text-[1.02rem] leading-[1.7]" style="color: var(--text-secondary);">People inquire about buying, renting or selling through a public form, and agents work each lead through a pipeline from New to Closed. It handles lead routing (first to claim or round robin), follow-up dates, tasks assigned to teammates, a closing checklist for every deal, saved filters, a timeline on each lead, reports and a calendar. It also exposes a read-only API that n8n workflows use for speed-to-lead alerts and a daily digest.</p>
+
+    <div class="mt-9 tv-frame">
+      <div class="tv-frame-bar"><i></i><i></i><i></i><span>Leads pipeline</span></div>
+      <img class="tv-shot" src="BRAND%20ASSETS/proof-screenshots/trusvana-leads.png" alt="Trusvana leads board with the pipeline stages New, Contacted, Viewing, Offer and Closed, plus filters and Export CSV" />
+    </div>
+
+    <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/trusvana-today.png" data-alt="Trusvana Today page: unclaimed leads, follow-ups due, tasks due and recent activity">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/trusvana-today.png" alt="Trusvana Today page" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Today: what needs action</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/trusvana-transactions.png" data-alt="Trusvana transactions list showing deals, price, progress and expected closing">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/trusvana-transactions.png" alt="Trusvana transactions list" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Transactions: closing checklists</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/trusvana-reports.png" data-alt="Trusvana reports page">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/trusvana-reports.png" alt="Trusvana reports page" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Reports: funnel and sources</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/trusvana-landing.png" data-alt="Trusvana public inquiry page with the lead capture form">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/trusvana-landing.png" alt="Trusvana public inquiry page" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Public inquiry form</div>
+      </button>
+    </div>
+
+    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">Problems it solves</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Customer information gathering</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Instead of typing customer details into an Excel sheet by hand, people fill in a public inquiry form: name, contact details, buy, rent or sell, budget, area and the property they like. It goes straight into the CRM as a new lead and is routed to an agent, with a spam check built in.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Duplicate leads</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">When a new lead has the same email or phone as an existing one, both are tagged "check duplicate" and a note is added to their timelines, so a person can review them instead of two agents chasing the same client. Nothing is deleted automatically.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Exporting leads</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">An Export CSV button downloads leads for a date range, a pipeline stage, a teammate or follow-ups due. The file opens cleanly in Excel, and cells that could run as spreadsheet formulas are neutralized.</p>
+      </div>
+    </div>
+
+    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">What it's built with</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Front end</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">React and TypeScript, built with Vite. Styled with Tailwind CSS and shadcn/ui components, routed with React Router, set in the Geist typeface.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Back end</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Python and Flask serving a JSON API. Password logins with hashed passwords, CSRF protection, login lockout, a spam check on the public form and strict security headers.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Database</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">SQLite, queried with plain parameterized SQL and no ORM. Tables cover leads, properties, tasks, transactions, tags, saved views and a timeline of every change.</p>
+      </div>
+    </div>
+
+    <div class="mt-5 grid md:grid-cols-2 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Hosting and deploys</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Runs on PythonAnywhere. A push to GitHub starts a GitHub Actions build and smoke test, then uploads the app and reloads the site automatically.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Automation</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Token-protected read-only endpoints feed importable n8n workflows: a speed-to-lead alert for new inquiries and a daily digest of follow-ups due.</p>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Tailwind CSS</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">shadcn/ui</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Flask</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">SQLite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">GitHub Actions</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PythonAnywhere</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+    </div>
+  </section>
+
+  <section id="automation-hub" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Automation Hub: automations that fail loudly</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">A run board for webhook automations. Runs on my machine for now, and the screenshots show seeded demo data.</p>
+
+    <p class="mt-6 max-w-[68ch] text-[1.02rem] leading-[1.7]" style="color: var(--text-secondary);">Most automations only get tested for the day everything works. This one is built for the day it doesn't. Apps and n8n flows send it signed webhooks, it queues each one, retries the ones that fail, and gives up cleanly with a plain-language reason when retries run out. Every run keeps its payload, every try and a history of who did what, so a failure never disappears.</p>
+
+    <div class="mt-9 tv-frame">
+      <div class="tv-frame-bar"><i></i><i></i><i></i><span>Runs board</span></div>
+      <img class="tv-shot tv-shot-crop" src="BRAND%20ASSETS/proof-screenshots/hub-runs-board.png" alt="Automation Hub runs board with 19 demo runs: 12 done, 3 retrying and 4 that gave up" />
+    </div>
+
+    <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-4">
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/hub-run-detail.png" data-alt="A run that gave up: the error, all three tries, the received payload, history and a Retry button">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/hub-run-detail.png" alt="Automation Hub run detail page" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Run detail: why it gave up</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/hub-needs-attention.png" data-alt="Runs board filtered to the runs that need attention">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/hub-needs-attention.png" alt="Automation Hub needs attention view" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Needs attention: only the problems</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/hub-runs-board-mobile.png" data-alt="Automation Hub runs board on a phone">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/hub-runs-board-mobile.png" alt="Automation Hub runs board on a phone" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Works on a phone</div>
+      </button>
+    </div>
+
+    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">Problems it solves</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Silent failures</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">A failed run lands in a Needs attention view with the exact error, so a lost order or missed lead gets noticed the same day. Alerts for runs that give up are built and tested, and not connected to a live Telegram bot yet.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Duplicates and bad requests</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">An idempotency key means the same event never runs twice. Requests are signed with a shared secret and expire after 5 minutes, so an old request can't be replayed.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Temporary problems</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Retries back off with a bit of randomness, up to a limit set per source. After the last try the run is marked Gave up, and an admin can retry it with one click.</p>
+      </div>
+    </div>
+
+    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">What it's built with</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Back end</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Python and FastAPI take in the webhooks. A separate worker process runs the jobs, so slow work never blocks incoming requests.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Database and queue</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">PostgreSQL 16 stores everything and is also the job queue. Workers claim jobs with <span style="font-family: ui-monospace, monospace; font-size: 0.85em;">FOR UPDATE SKIP LOCKED</span>, so two workers never take the same job. No Redis needed.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Dashboard</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">React and TypeScript, served by nginx in Docker. Login with admin and viewer roles, lockout after repeated failed logins, and times shown in Philippine time.</p>
+      </div>
+    </div>
+
+    <div class="mt-5 card p-6">
+      <h4 class="font-semibold text-base" style="color: var(--text-primary);">Safety and testing</h4>
+      <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">The app connects to the database with a limited role that can't alter or rewrite the audit log, and the log blocks edits and deletes at the database level. The dashboard has a strict content security policy. 374 automated API tests run against a real Postgres at 97% coverage, plus tests for the dashboard.</p>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">FastAPI</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PostgreSQL</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Docker</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">nginx</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+    </div>
+  </section>
+
+  <section id="veliora-stock" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Veliora Stock: inventory for a spirits distributor</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Inventory and order management built for a whiskey and spirits distributor. The brands and retail prices are real, and the costs, B2B prices and customers are made up.</p>
+
+    <p class="mt-6 max-w-[68ch] text-[1.02rem] leading-[1.7]" style="color: var(--text-secondary);">Stock is never typed in by hand. Every bottle in or out is a row in a ledger that can't be edited, and the database itself refuses to sell a bottle that isn't there. Orders move from draft to confirmed to fulfilled, profit is worked out per order, and any order prints as an invoice.</p>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="https://veliora-stock.onrender.com" target="_blank" rel="noopener" class="btn-primary font-semibold px-6 py-3 rounded-full text-sm">Open the live demo</a>
+      <span class="self-center text-sm" style="color: var(--text-muted);">Free hosting, so the first load can take about 20 seconds.</span>
+    </div>
+
+    <div class="mt-9 tv-frame">
+      <div class="tv-frame-bar"><i></i><i></i><i></i><span>Dashboard</span></div>
+      <img class="tv-shot" src="BRAND%20ASSETS/proof-screenshots/veliora-dashboard.png" alt="Veliora Stock dashboard showing stock value, low stock count, orders to fulfill and recent orders" />
+    </div>
+
+    <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-4">
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/veliora-orders.png" data-alt="Veliora Stock orders list with status and totals">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/veliora-orders.png" alt="Veliora Stock orders list" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Orders: draft to fulfilled</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/veliora-order-detail.png" data-alt="Veliora Stock order detail with lines and profit">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/veliora-order-detail.png" alt="Veliora Stock order detail with profit" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Order with profit</div>
+      </button>
+      <button type="button" class="tv-thumb" data-full="BRAND%20ASSETS/proof-screenshots/veliora-stock-history.png" data-alt="Veliora Stock ledger of every stock movement">
+        <div class="tv-frame"><img src="BRAND%20ASSETS/proof-screenshots/veliora-stock-history.png" alt="Veliora Stock ledger of every stock movement" loading="lazy" /></div>
+        <div class="mt-2 text-xs" style="color: var(--text-muted);">Stock history: the ledger</div>
+      </button>
+    </div>
+
+    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">Problems it solves</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Counts that drift</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Stock on hand is calculated from the ledger by the database, not typed in. A mistake is fixed with a new entry, so there is always a trail of what changed and why.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Overselling</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Negative stock is impossible, even from a raw SQL insert. When two orders race for the last bottle, exactly one wins. This is tested with real concurrent requests.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Not knowing the margin</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Profit per order uses the average cost at the moment the bottles shipped. Retail and B2B customers get their own prices, and reports cover each month and each product.</p>
+      </div>
+    </div>
+
+    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">What it's built with</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Front end</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">React and TypeScript with Vite and Tailwind. A root error boundary keeps one bad response from blanking the whole app.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Back end</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Python and Flask serving a JSON API. Admin and staff roles, a read-only demo login, CSRF protection and lockout after 5 bad passwords.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold text-base" style="color: var(--text-primary);">Database</h4>
+        <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">PostgreSQL 16 with plain SQL and no ORM. Triggers keep stock and average cost correct, and a second trigger blocks edits to the ledger. 69 tests run against a real Postgres.</p>
+      </div>
+    </div>
+
+    <div class="mt-5 card p-6">
+      <h4 class="font-semibold text-base" style="color: var(--text-primary);">Automation and exports</h4>
+      <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">A token-protected low-stock feed plugs into n8n for reorder messages. Products, orders, stock movements and sales reports export to CSV, with cells neutralized so a spreadsheet never runs one as a formula.</p>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PostgreSQL</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Flask</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Tailwind CSS</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Docker</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+    </div>
+  </section>
+
   <section id="skills" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
     <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Skills</h2>
     <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">What that looks like day to day, inside each discipline.</p>
@@ -641,15 +969,16 @@
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">Claude</span>
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">OpenAI Assistants</span>
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">LangChain</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pinecone</span>
         </div>
       </div>
 
       <div class="tool-group">
-        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Data & web scraping</h3>
+        <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Data & dev tools</h3>
         <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Apify</span>
-          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Phantombuster</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Firecrawl</span>
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">Postman</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">BigQuery</span>
         </div>
       </div>
 
@@ -658,7 +987,8 @@
         <div class="mt-3 flex flex-wrap gap-2">
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">HubSpot</span>
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">Salesforce</span>
-          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Pipedrive</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">GoHighLevel</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Brivity (Certified)</span>
         </div>
       </div>
 
@@ -675,8 +1005,7 @@
         <h3 class="text-xs font-semibold tracking-wide" style="color: var(--accent-light);">Dev & infrastructure</h3>
         <div class="mt-3 flex flex-wrap gap-2">
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">GitHub</span>
-          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Webflow</span>
-          <span class="chip px-3.5 py-1.5 rounded-full text-sm">AWS Lambda</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Trigger.dev</span>
         </div>
       </div>
 
@@ -685,7 +1014,7 @@
         <div class="mt-3 flex flex-wrap gap-2">
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">Notion</span>
           <span class="chip px-3.5 py-1.5 rounded-full text-sm">ClickUp</span>
-          <span class="chip px-3.5 py-1.5 rounded-full text-sm">Asana</span>
+          <span class="chip px-3.5 py-1.5 rounded-full text-sm">DocuSign</span>
         </div>
       </div>
     </div>
@@ -753,6 +1082,17 @@
     document.querySelectorAll(".marquee-item").forEach(function (img) {
       img.addEventListener("click", function () {
         openLightbox(img.src, img.alt);
+      });
+    });
+
+    document.querySelectorAll(".tv-shot").forEach(function (img) {
+      img.addEventListener("click", function () {
+        openLightbox(img.src, img.alt);
+      });
+    });
+    document.querySelectorAll(".tv-thumb").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        openLightbox(btn.getAttribute("data-full"), btn.getAttribute("data-alt"));
       });
     });
 
@@ -857,5 +1197,28 @@
       el.classList.add("reveal-armed");
       io.observe(el);
     });
+  })();
+
+  // Click-to-play YouTube embeds: <button class="yt" data-yt="VIDEO_ID" data-title="...">
+  (function () {
+    function arm(btn) {
+      var id = btn.getAttribute("data-yt");
+      if (!id) return;
+      btn.style.backgroundImage = "url(https://i.ytimg.com/vi/" + id + "/hqdefault.jpg)";
+      btn.setAttribute("aria-label", "Play video: " + (btn.getAttribute("data-title") || "project video"));
+      btn.innerHTML = '<span class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#06120c" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
+      btn.addEventListener("click", function () {
+        var frame = document.createElement("iframe");
+        frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+        frame.title = btn.getAttribute("data-title") || "Project video";
+        frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        frame.allowFullscreen = true;
+        btn.innerHTML = "";
+        btn.appendChild(frame);
+        btn.style.cursor = "default";
+        btn.disabled = true;
+      });
+    }
+    document.querySelectorAll(".yt[data-yt]").forEach(arm);
   })();
 </script>
