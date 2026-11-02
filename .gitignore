@@ -3,3 +3,4 @@ temporary screenshots/
 .env
 .env.local
 .vercel
+reference/
