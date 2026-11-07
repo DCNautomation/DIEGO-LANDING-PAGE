@@ -1,26 +1,35 @@
 <title>Diego Nodado, Executive Assistant & AI Automation Specialist</title>
 <meta name="description" content="Diego Nodado, Executive Assistant and AI Automation Specialist. n8n workflows, AI agent integrations, and CRM systems." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%2310d97e%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2714%27 font-weight=%27700%27 text-anchor=%27middle%27 font-family=%27Arial%27 fill=%27%2306120c%27%3EDN%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
-    --bg-void: #060c16;
-    --bg-surface: #08101e;
-    --bg-card: #0d1a2e;
-    --bg-card-hi: #10203a;
-    --accent: #10d97e;
-    --accent-deep: #0ab868;
-    --accent-light: #34e896;
-    --text-primary: #ffffff;
-    --text-secondary: #b6c2d1;
-    --text-muted: #6b7889;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(16, 217, 126, 0.35);
-    --scrollbar-track: #08101e;
-    --scrollbar-thumb: #10d97e;
-    --scrollbar-thumb-hover: #0ab868;
+    color-scheme: light;
+    /* neutrals, tinted a hint toward the brand green */
+    --bg-void: #f6f8f6;
+    --bg-surface: #edf1ee;
+    --bg-card: #fcfdfc;
+    --bg-card-hi: #f1f5f2;
+    /* brand green ramp: 600 main, 700 hover/deep, 500 for icons */
+    --accent: #0a7a4b;
+    --accent-deep: #086640;
+    --accent-light: #0a7a4b;
+    --on-accent: #f6fbf8;
+    /* text: ~11% / ~22% / ~40% lightness */
+    --text-primary: #1a201d;
+    --text-secondary: #38423d;
+    --text-muted: #5a6760;
+    --border-subtle: rgba(26, 50, 38, 0.14);
+    --border-accent: rgba(10, 122, 75, 0.38);
+    --shadow-rgb: 28, 52, 40;
+    --scrollbar-track: #edf1ee;
+    --scrollbar-thumb: #9db3a6;
+    --scrollbar-thumb-hover: #0a7a4b;
   }
 
   * { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); }
@@ -46,9 +55,9 @@
     z-index: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 900px 600px at 8% -5%, rgba(16, 217, 126, 0.16), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 15%, rgba(10, 184, 104, 0.10), transparent 55%),
-      radial-gradient(ellipse 800px 700px at 50% 100%, rgba(16, 217, 126, 0.07), transparent 60%);
+      radial-gradient(ellipse 900px 600px at 8% -5%, rgba(10, 122, 75, 0.09), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 15%, rgba(8, 102, 64, 0.06), transparent 55%),
+      radial-gradient(ellipse 800px 700px at 50% 100%, rgba(10, 122, 75, 0.05), transparent 60%);
   }
 
   .bg-noise {
@@ -56,8 +65,8 @@
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.035;
-    mix-blend-mode: overlay;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -68,11 +77,11 @@
     border: 1px solid var(--border-subtle);
     border-left: 3px solid var(--border-accent);
     border-radius: 14px;
-    box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6), 0 8px 24px -12px rgba(16, 217, 126, 0.08);
+    box-shadow: 0 20px 40px -24px rgba(var(--shadow-rgb), 0.12), 0 8px 24px -12px rgba(10, 122, 75, 0.08);
   }
 
   .pill {
-    background: rgba(16, 217, 126, 0.08);
+    background: rgba(10, 122, 75, 0.08);
     border: 1px solid var(--border-accent);
     border-radius: 999px;
   }
@@ -82,20 +91,20 @@
     height: 7px;
     border-radius: 999px;
     background: var(--accent);
-    box-shadow: 0 0 0 0 rgba(16, 217, 126, 0.6);
+    box-shadow: 0 0 0 0 rgba(10, 122, 75, 0.6);
     animation: pulse-dot 2.4s ease-out infinite;
   }
   @keyframes pulse-dot {
-    0%   { box-shadow: 0 0 0 0 rgba(16, 217, 126, 0.55); }
-    70%  { box-shadow: 0 0 0 8px rgba(16, 217, 126, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(16, 217, 126, 0); }
+    0%   { box-shadow: 0 0 0 0 rgba(10, 122, 75, 0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(10, 122, 75, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(10, 122, 75, 0); }
   }
 
   .btn-primary {
     background: linear-gradient(180deg, var(--accent-light), var(--accent-deep));
-    color: #06120c;
+    color: var(--on-accent);
     transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 220ms ease, filter 200ms ease;
-    box-shadow: 0 14px 30px -12px rgba(16, 217, 126, 0.45);
+    box-shadow: 0 12px 28px -12px rgba(10, 122, 75, 0.35);
   }
   .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.06); }
   .btn-primary:active { transform: translateY(0) scale(0.98); }
@@ -110,9 +119,8 @@
 
   .capability-card { transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease, box-shadow 240ms ease; }
   .capability-card:hover {
-    transform: translateY(-4px);
-    border-left-color: var(--accent);
-    box-shadow: 0 26px 50px -22px rgba(0, 0, 0, 0.65), 0 10px 30px -10px rgba(16, 217, 126, 0.18);
+    transform: none;
+    box-shadow: 0 26px 50px -22px rgba(var(--shadow-rgb), 0.13), 0 10px 30px -10px rgba(10, 122, 75, 0.18);
   }
 
   .chip {
@@ -121,7 +129,7 @@
     color: var(--text-secondary);
     transition: border-color 200ms ease, color 200ms ease, transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .chip:hover { border-color: var(--border-accent); color: var(--text-primary); transform: translateY(-2px); }
+  a.chip:hover, button.chip:hover { border-color: var(--border-accent); color: var(--text-primary); transform: translateY(-2px); }
   a.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   a.chip:active { transform: translateY(0) scale(0.97); }
 
@@ -134,19 +142,19 @@
     position: absolute;
     inset: -18%;
     z-index: -1;
-    background: radial-gradient(circle, rgba(16, 217, 126, 0.35), transparent 65%);
+    background: radial-gradient(circle, rgba(10, 122, 75, 0.16), transparent 65%);
     filter: blur(20px);
   }
   .photo-frame img {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(26, 50, 38, 0.14);
+    box-shadow: 0 30px 60px -20px rgba(var(--shadow-rgb), 0.14);
   }
   .photo-frame::after {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(180deg, transparent 55%, rgba(6, 12, 22, 0.55) 100%);
+    background: linear-gradient(180deg, transparent 55%, rgba(26, 50, 38, 0.10) 100%);
     pointer-events: none;
   }
 
@@ -218,7 +226,7 @@
     width: auto;
     border-radius: 14px;
     border: 1px solid var(--border-subtle);
-    box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6), 0 8px 24px -12px rgba(16, 217, 126, 0.08);
+    box-shadow: 0 20px 40px -24px rgba(var(--shadow-rgb), 0.12), 0 8px 24px -12px rgba(10, 122, 75, 0.08);
     object-fit: cover;
     background: var(--bg-card);
     cursor: zoom-in;
@@ -228,7 +236,7 @@
     transform: scale(1.14);
     z-index: 5;
     position: relative;
-    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.75), 0 0 0 1px var(--border-accent);
+    box-shadow: 0 30px 60px -20px rgba(var(--shadow-rgb), 0.15), 0 0 0 1px var(--border-accent);
   }
 
   .lightbox {
@@ -239,7 +247,7 @@
     align-items: center;
     justify-content: center;
     padding: 5vh 5vw;
-    background: rgba(6, 12, 22, 0.88);
+    background: rgba(22, 30, 26, 0.86);
     backdrop-filter: blur(6px);
     cursor: zoom-out;
   }
@@ -248,7 +256,7 @@
     max-height: 100%;
     border-radius: 12px;
     border: 1px solid var(--border-subtle);
-    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 40px 80px -20px rgba(var(--shadow-rgb), 0.16);
   }
   .lightbox-close {
     position: absolute;
@@ -304,9 +312,8 @@
 
   .skill-card { transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease, box-shadow 240ms ease; }
   .skill-card:hover {
-    transform: translateY(-3px);
-    border-left-color: var(--accent);
-    box-shadow: 0 26px 50px -22px rgba(0, 0, 0, 0.65), 0 10px 30px -10px rgba(16, 217, 126, 0.18);
+    transform: none;
+    box-shadow: 0 26px 50px -22px rgba(var(--shadow-rgb), 0.13), 0 10px 30px -10px rgba(10, 122, 75, 0.18);
   }
 
   .tv-frame {
@@ -314,7 +321,7 @@
     border: 1px solid var(--border-subtle);
     background: var(--bg-card);
     overflow: hidden;
-    box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.75), 0 10px 30px -14px rgba(16, 217, 126, 0.12);
+    box-shadow: 0 30px 60px -28px rgba(var(--shadow-rgb), 0.15), 0 10px 30px -14px rgba(10, 122, 75, 0.12);
   }
   .tv-frame-bar {
     display: flex;
@@ -324,7 +331,7 @@
     border-bottom: 1px solid var(--border-subtle);
     background: var(--bg-surface);
   }
-  .tv-frame-bar i { width: 9px; height: 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); display: block; }
+  .tv-frame-bar i { width: 9px; height: 9px; border-radius: 999px; background: rgba(26, 50, 38, 0.18); display: block; }
   .tv-frame-bar span { margin-left: 8px; font-size: 0.72rem; color: var(--text-muted); }
   .tv-shot {
     display: block;
@@ -357,9 +364,9 @@
     border: 1px solid var(--border-subtle);
     border-radius: 14px;
     overflow: hidden;
-    background: #060d18 center / cover no-repeat;
+    background: #dfe6e2 center / cover no-repeat;
     cursor: pointer;
-    box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.75), 0 10px 30px -14px rgba(16, 217, 126, 0.12);
+    box-shadow: 0 30px 60px -28px rgba(var(--shadow-rgb), 0.15), 0 10px 30px -14px rgba(10, 122, 75, 0.12);
   }
   .yt::before {
     content: "";
@@ -379,7 +386,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 14px 30px -10px rgba(16, 217, 126, 0.45);
+    box-shadow: 0 12px 28px -10px rgba(10, 122, 75, 0.35);
     transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   .yt:hover .yt-play { transform: scale(1.08); }
@@ -391,6 +398,117 @@
   @media (prefers-reduced-motion: reduce) {
     .tv-thumb .tv-frame { transition: none !important; }
   }
+
+  /* ---------- UX layer ---------- */
+  section[id], header[id] { scroll-margin-top: 72px; }
+
+  .skip-link {
+    position: absolute; left: 12px; top: -48px; z-index: 60;
+    background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 0.875rem;
+    padding: 10px 16px; border-radius: 999px; transition: top 160ms ease;
+  }
+  .skip-link:focus { top: 10px; outline: 2px solid #fff; outline-offset: 2px; }
+
+  .nav-link {
+    position: relative; display: inline-flex; align-items: center; min-height: 40px;
+    padding: 0 12px; font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
+    border-radius: 8px; transition: color 200ms ease;
+  }
+  .nav-link:hover { color: var(--text-primary); }
+  .nav-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .nav-link[aria-current="true"] { color: var(--text-primary); }
+  .nav-link[aria-current="true"]::after {
+    content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px;
+    border-radius: 2px; background: var(--accent);
+  }
+
+  .menu-btn {
+    width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 10px; color: var(--text-secondary); border: 1px solid var(--border-subtle);
+    background: transparent; cursor: pointer;
+  }
+  .menu-btn:hover { color: var(--text-primary); border-color: var(--border-accent); }
+  .menu-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .menu-btn .icon-close { display: none; }
+  .menu-btn[aria-expanded="true"] .icon-open { display: none; }
+  .menu-btn[aria-expanded="true"] .icon-close { display: block; }
+  .mobile-menu {
+    display: flex; flex-direction: column; padding: 8px 16px 16px;
+    border-top: 1px solid var(--border-subtle); background: rgba(246, 248, 246, 0.98);
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu .nav-link { min-height: 48px; font-size: 1rem; padding: 0 8px; }
+  .mobile-menu .nav-link[aria-current="true"]::after { left: 8px; right: auto; width: 24px; bottom: 8px; }
+
+  .btn-secondary {
+    color: var(--text-primary); border: 1px solid var(--border-accent); background: rgba(10, 122, 75, 0.06);
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), background 200ms ease;
+  }
+  .btn-secondary:hover { background: rgba(10, 122, 75, 0.14); transform: translateY(-2px); }
+  .btn-secondary:active { transform: translateY(0) scale(0.98); }
+  .btn-secondary:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 3px; }
+
+  /* project picker: these cards ARE links, so they react */
+  .pick { transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease; }
+  .pick:hover { transform: translateY(-3px); border-left-color: var(--accent); }
+  .pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .pick-img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; border-bottom: 1px solid var(--border-subtle); }
+  .pick-cta { display: inline-block; margin-top: 14px; font-size: 0.8125rem; font-weight: 600; color: var(--accent-light); }
+  .pick-cta::after { content: " \2193"; }
+
+  /* collapsible tech detail */
+  .more { border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--bg-surface); }
+  .more > summary {
+    list-style: none; cursor: pointer; padding: 16px 20px; display: flex; align-items: center;
+    justify-content: space-between; font-weight: 600; font-size: 0.95rem; color: var(--text-primary);
+    border-radius: 14px; min-height: 52px;
+  }
+  .more > summary::-webkit-details-marker { display: none; }
+  .more > summary::after {
+    content: ""; width: 8px; height: 8px; border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary); transform: rotate(45deg); transition: transform 200ms ease;
+    margin-right: 4px;
+  }
+  .more[open] > summary::after { transform: rotate(-135deg); }
+  .more > summary:hover { background: rgba(26, 50, 38, 0.05); }
+  .more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .more-body { padding: 4px 20px 24px; }
+  .more-body > .grid:first-child { margin-top: 12px; }
+
+  /* lightbox */
+  .lightbox[hidden] { display: none; }
+  .lightbox-fig { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: default; }
+  .lightbox-fig img { max-height: calc(90vh - 56px); object-fit: contain; }
+  #lightbox-cap { color: #e4ebe7; font-size: 0.85rem; text-align: center; max-width: 70ch; }
+  .lightbox-nav {
+    position: absolute; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2;
+    background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+  .lightbox-nav:hover { color: var(--text-primary); border-color: var(--border-accent); }
+  .lightbox-nav:focus-visible, .lightbox-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .lightbox-prev { left: 16px; }
+  .lightbox-next { right: 16px; }
+  .lightbox-nav[hidden] { display: none; }
+  .marquee-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .to-top {
+    position: fixed; right: 16px; bottom: 16px; z-index: 40; width: 44px; height: 44px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    background: var(--bg-card); border: 1px solid var(--border-accent); color: var(--accent-light);
+    box-shadow: 0 10px 24px -10px rgba(var(--shadow-rgb), 0.14);
+  }
+  .to-top[hidden] { display: none; }
+  .to-top:hover { background: var(--bg-card-hi); }
+  .to-top:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 3px; }
+
+  /* touch: no hover zoom on carousel images, bigger tap targets */
+  @media (hover: none) { .marquee-item:hover { transform: none; } }
+  @media (max-width: 640px) {
+    .marquee-item { height: 180px; }
+    .marquee-btn { padding: 12px 18px; }
+  }
 </style>
 
 <div class="bg-field"></div>
@@ -398,21 +516,37 @@
 
 <div class="container-page">
 
-  <nav class="sticky top-0 z-20 border-b" style="background: rgba(6,12,22,0.72); backdrop-filter: blur(10px); border-color: var(--border-subtle);">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="sticky top-0 z-30 border-b" style="background: rgba(246, 248, 246, 0.88); backdrop-filter: blur(10px); border-color: var(--border-subtle);" aria-label="Main">
     <div class="max-w-5xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2.5">
-        <span class="flex items-center justify-center w-8 h-8 rounded-lg text-sm font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: #06120c;">DN</span>
+      <a href="#top" class="flex items-center gap-2.5" aria-label="Diego Nodado, back to top">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg text-sm font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: var(--on-accent);">DN</span>
         <span class="text-sm font-medium tracking-tight" style="color: var(--text-secondary);">Diego Nodado</span>
       </a>
-      <div class="flex items-center gap-6">
-        <a href="#capabilities" class="hidden sm:inline text-sm btn-ghost">What I do</a>
-        <a href="#projects" class="hidden sm:inline text-sm btn-ghost">Projects</a>
-        <a href="#contact" class="hidden sm:inline text-sm btn-ghost">Contact</a>
-        <a href="#contact" class="btn-primary text-sm font-semibold px-4 py-2 rounded-full">Get in touch</a>
+      <div class="flex items-center gap-1 sm:gap-2">
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#capabilities" class="nav-link">What I do</a>
+          <a href="#work" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <a href="mailto:dnodadoshopify@gmail.com" class="btn-primary text-sm font-semibold px-4 py-2 rounded-full ml-2">Email me</a>
+        <button type="button" id="menu-btn" class="menu-btn md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden" hidden>
+      <a href="#capabilities" class="nav-link">What I do</a>
+      <a href="#work" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#tools" class="nav-link">Tools</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
 
+  <main id="main">
   <header id="top" class="max-w-5xl mx-auto px-6 md:px-8 pt-14 md:pt-20">
     <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-10 items-center">
 
@@ -434,7 +568,7 @@
 
         <div class="hero-enter hero-enter-4 mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
           <a href="#contact" class="btn-primary font-semibold px-6 py-3 rounded-full text-sm">Get in touch</a>
-          <a href="#capabilities" class="btn-ghost text-sm font-medium">What I do ↓</a>
+          <a href="#work" class="btn-secondary font-semibold px-6 py-3 rounded-full text-sm">See my projects</a>
         </div>
       </div>
 
@@ -469,7 +603,7 @@
 
     <div class="mt-9 grid md:grid-cols-3 gap-5">
       <div class="capability-card card p-6">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(10, 122, 75,0.1);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="5" width="18" height="16" rx="2.5"></rect>
             <path d="M3 10h18"></path>
@@ -482,7 +616,7 @@
       </div>
 
       <div class="capability-card card p-6">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(10, 122, 75,0.1);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="5" cy="6" r="2.5"></circle>
             <circle cx="19" cy="18" r="2.5"></circle>
@@ -495,7 +629,7 @@
       </div>
 
       <div class="capability-card card p-6">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(10, 122, 75,0.1);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 17l5-5 4 4 8-9"></path>
             <path d="M15 7h5v5"></path>
@@ -568,15 +702,14 @@
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-tasks-list.png" alt="Trigger.dev dashboard showing the dental-leads automation tasks" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run: 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/clickup-dental-leads-list.png" alt="Auto-generated ClickUp task list from the lead-gen run" />
-        <img class="marquee-item" src="https://placehold.co/380x220/0d1a2e/6b7889?text=More+coming+soon" alt="More proof coming soon" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-tasks-list.png" alt="Trigger.dev dashboard showing the dental-leads automation tasks" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/trigger-dev-run-output.png" alt="Completed automation run: 171 dentists scanned, 85 no-website leads found, 20 tasks created" />
         <img class="marquee-item" src="BRAND%20ASSETS/proof-screenshots/clickup-dental-leads-list.png" alt="Auto-generated ClickUp task list from the lead-gen run" />
-        <img class="marquee-item" src="https://placehold.co/380x220/0d1a2e/6b7889?text=More+coming+soon" alt="More proof coming soon" />
       </div>
     </div>
 
     <div class="marquee-controls">
+      <button type="button" class="marquee-btn" id="marquee-pause" aria-pressed="false">Pause</button>
       <button type="button" class="marquee-btn" id="marquee-prev" aria-label="Roll backward, faster">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
         Previous
@@ -585,6 +718,37 @@
         Next
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </button>
+    </div>
+  </section>
+
+  <section id="work" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
+    <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--text-primary);">Three systems I built</h2>
+    <p class="mt-2 max-w-[60ch] text-sm md:text-base" style="color: var(--text-muted);">Pick one to jump to its screenshots, walkthrough and details.</p>
+    <div class="mt-9 grid md:grid-cols-3 gap-5">
+      <a href="#trusvana" class="pick card overflow-hidden block">
+        <img src="BRAND%20ASSETS/proof-screenshots/trusvana-leads.png" alt="" loading="lazy" class="pick-img" />
+        <div class="p-5">
+          <h3 class="font-semibold text-base" style="color: var(--text-primary);">Trusvana</h3>
+          <p class="mt-1.5 text-sm" style="color: var(--text-secondary);">Real estate CRM with lead routing and a deal pipeline.</p>
+          <span class="pick-cta">View project</span>
+        </div>
+      </a>
+      <a href="#automation-hub" class="pick card overflow-hidden block">
+        <img src="BRAND%20ASSETS/proof-screenshots/hub-runs-board.png" alt="" loading="lazy" class="pick-img" />
+        <div class="p-5">
+          <h3 class="font-semibold text-base" style="color: var(--text-primary);">Automation Hub</h3>
+          <p class="mt-1.5 text-sm" style="color: var(--text-secondary);">Run board for webhook automations that retries and reports failures.</p>
+          <span class="pick-cta">View project</span>
+        </div>
+      </a>
+      <a href="#veliora-stock" class="pick card overflow-hidden block">
+        <img src="BRAND%20ASSETS/proof-screenshots/veliora-dashboard.png" alt="" loading="lazy" class="pick-img" />
+        <div class="p-5">
+          <h3 class="font-semibold text-base" style="color: var(--text-primary);">Veliora Stock</h3>
+          <p class="mt-1.5 text-sm" style="color: var(--text-secondary);">Inventory and orders for a spirits distributor. Live demo available.</p>
+          <span class="pick-cta">View project</span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -634,7 +798,23 @@
       </div>
     </div>
 
-    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">What it's built with</h3>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Tailwind CSS</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">shadcn/ui</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Flask</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">SQLite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">GitHub Actions</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PythonAnywhere</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+    </div>
+
+    <details class="more mt-6">
+      <summary>How it's built</summary>
+      <div class="more-body">
     <div class="mt-6 grid md:grid-cols-3 gap-5">
       <div class="card p-6">
         <h4 class="font-semibold text-base" style="color: var(--text-primary);">Front end</h4>
@@ -660,20 +840,8 @@
         <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">Token-protected read-only endpoints feed importable n8n workflows: a speed-to-lead alert for new inquiries and a daily digest of follow-ups due.</p>
       </div>
     </div>
-
-    <div class="mt-6 flex flex-wrap gap-2">
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Tailwind CSS</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">shadcn/ui</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Flask</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">SQLite</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">GitHub Actions</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PythonAnywhere</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
-    </div>
+      </div>
+    </details>
   </section>
 
   <section id="automation-hub" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
@@ -723,7 +891,21 @@
       </div>
     </div>
 
-    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">What it's built with</h3>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">FastAPI</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PostgreSQL</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Docker</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">nginx</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+    </div>
+
+    <details class="more mt-6">
+      <summary>How it's built</summary>
+      <div class="more-body">
     <div class="mt-6 grid md:grid-cols-3 gap-5">
       <div class="card p-6">
         <h4 class="font-semibold text-base" style="color: var(--text-primary);">Back end</h4>
@@ -743,18 +925,8 @@
       <h4 class="font-semibold text-base" style="color: var(--text-primary);">Safety and testing</h4>
       <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">The app connects to the database with a limited role that can't alter or rewrite the audit log, and the log blocks edits and deletes at the database level. The dashboard has a strict content security policy. 374 automated API tests run against a real Postgres at 97% coverage, plus tests for the dashboard.</p>
     </div>
-
-    <div class="mt-6 flex flex-wrap gap-2">
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">FastAPI</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PostgreSQL</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Docker</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">nginx</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
-    </div>
+      </div>
+    </details>
   </section>
 
   <section id="veliora-stock" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
@@ -809,7 +981,21 @@
       </div>
     </div>
 
-    <h3 class="font-display font-semibold tracking-tight mt-14" style="font-size: 1.35rem; color: var(--text-primary);">What it's built with</h3>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PostgreSQL</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Flask</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Tailwind CSS</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Docker</span>
+      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
+    </div>
+
+    <details class="more mt-6">
+      <summary>How it's built</summary>
+      <div class="more-body">
     <div class="mt-6 grid md:grid-cols-3 gap-5">
       <div class="card p-6">
         <h4 class="font-semibold text-base" style="color: var(--text-primary);">Front end</h4>
@@ -829,18 +1015,8 @@
       <h4 class="font-semibold text-base" style="color: var(--text-primary);">Automation and exports</h4>
       <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">A token-protected low-stock feed plugs into n8n for reorder messages. Products, orders, stock movements and sales reports export to CSV, with cells neutralized so a spreadsheet never runs one as a formula.</p>
     </div>
-
-    <div class="mt-6 flex flex-wrap gap-2">
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">PostgreSQL</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Python</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Flask</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">React</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">TypeScript</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Vite</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Tailwind CSS</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">Docker</span>
-      <span class="chip px-3.5 py-1.5 rounded-full text-sm">n8n</span>
-    </div>
+      </div>
+    </details>
   </section>
 
   <section id="skills" class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20 border-t" style="border-color: var(--border-subtle);">
@@ -849,7 +1025,7 @@
 
     <div class="mt-9 grid md:grid-cols-2 gap-5">
       <div class="skill-card card p-6">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(10, 122, 75,0.1);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="5" width="18" height="16" rx="2.5"></rect>
             <path d="M3 10h18"></path>
@@ -895,7 +1071,7 @@
       </div>
 
       <div class="skill-card card p-6">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(16,217,126,0.1);">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5" style="background: rgba(10, 122, 75,0.1);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="5" cy="6" r="2.5"></circle>
             <circle cx="19" cy="18" r="2.5"></circle>
@@ -1079,20 +1255,23 @@
     </div>
   </section>
 
+  </main>
+
   <footer id="contact" class="border-t" style="border-color: var(--border-subtle); background: var(--bg-surface);">
     <div class="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-20">
       <div class="max-w-xl">
         <h2 class="font-display font-semibold tracking-tight" style="font-size: clamp(1.7rem, 3.2vw, 2.3rem); color: var(--text-primary);">Let's talk</h2>
         <p class="mt-3 text-[1rem] leading-relaxed" style="color: var(--text-secondary);">Tell me about the role, and I'll reply within a day.</p>
+        <p class="mt-2 text-sm" style="color: var(--text-muted);">dnodadoshopify@gmail.com <span id="copy-status" role="status" aria-live="polite" class="ml-2" style="color: var(--accent-light);"></span></p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a href="mailto:dnodadoshopify@gmail.com" class="btn-primary font-semibold px-6 py-3 rounded-full text-sm">Email me</a>
-          <a href="#" class="chip px-6 py-3 rounded-full text-sm font-medium">LinkedIn</a>
+          <button type="button" id="copy-email" class="chip px-6 py-3 rounded-full text-sm font-medium cursor-pointer" data-email="dnodadoshopify@gmail.com">Copy email</button>
         </div>
       </div>
 
       <div class="mt-16 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style="border-top: 1px solid var(--border-subtle);">
         <div class="flex items-center gap-2.5">
-          <span class="flex items-center justify-center w-7 h-7 rounded-md text-xs font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: #06120c;">DN</span>
+          <span class="flex items-center justify-center w-7 h-7 rounded-md text-xs font-bold" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-deep)); color: var(--on-accent);">DN</span>
           <span class="text-sm" style="color: var(--text-muted);">Diego Nodado © 2026</span>
         </div>
         <span class="text-sm" style="color: var(--text-muted);">Executive Assistant · AI Automation Specialist</span>
@@ -1102,11 +1281,15 @@
 
 </div>
 
-<div id="lightbox" class="lightbox" hidden>
+<button type="button" id="to-top" class="to-top" aria-label="Back to top" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
   <button class="lightbox-close" id="lightbox-close" aria-label="Close">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
-  <img id="lightbox-img" src="" alt="" />
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <figure class="lightbox-fig"><img id="lightbox-img" src="" alt="" /><figcaption id="lightbox-cap"></figcaption></figure>
 </div>
 
 <script>
@@ -1114,40 +1297,134 @@
     var lightbox = document.getElementById("lightbox");
     var lightboxImg = document.getElementById("lightbox-img");
 
-    function openLightbox(src, alt) {
-      lightboxImg.src = src;
-      lightboxImg.alt = alt || "";
+    var lightboxCap = document.getElementById("lightbox-cap");
+    var prevBtn = document.getElementById("lightbox-prev");
+    var nextBtn = document.getElementById("lightbox-next");
+    var closeBtn = document.getElementById("lightbox-close");
+    var items = [], index = 0, lastFocus = null;
+
+    // Everything zoomable inside one section forms a gallery you can step through.
+    function collect(section) {
+      var list = [], seen = {};
+      section.querySelectorAll(".marquee-item, .tv-shot, .tv-thumb").forEach(function (el) {
+        if (el.closest("[aria-hidden='true']")) return;
+        var src = el.classList.contains("tv-thumb") ? el.getAttribute("data-full") : el.getAttribute("src");
+        var alt = el.classList.contains("tv-thumb") ? el.getAttribute("data-alt") : el.getAttribute("alt");
+        if (!src || seen[src]) return;
+        seen[src] = true;
+        list.push({ src: src, alt: alt || "" });
+      });
+      return list;
+    }
+    function show(i) {
+      index = (i + items.length) % items.length;
+      lightboxImg.src = items[index].src;
+      lightboxImg.alt = items[index].alt;
+      lightboxCap.textContent = items[index].alt + (items.length > 1 ? "  (" + (index + 1) + " of " + items.length + ")" : "");
+    }
+    function openFrom(el) {
+      var section = el.closest("section") || document.body;
+      items = collect(section);
+      var key = el.classList.contains("tv-thumb") ? el.getAttribute("data-full") : el.getAttribute("src");
+      var i = items.findIndex(function (it) { return it.src === key; });
+      lastFocus = document.activeElement;
+      prevBtn.hidden = nextBtn.hidden = items.length < 2;
+      show(i < 0 ? 0 : i);
       lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
     }
     function closeLightbox() {
       lightbox.hidden = true;
       lightboxImg.src = "";
+      document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
-    document.querySelectorAll(".marquee-item").forEach(function (img) {
-      img.addEventListener("click", function () {
-        openLightbox(img.src, img.alt);
-      });
+    document.querySelectorAll(".marquee-item, .tv-shot, .tv-thumb").forEach(function (el) {
+      el.addEventListener("click", function () { openFrom(el); });
+      if (el.tagName === "IMG") {
+        el.setAttribute("tabindex", "0");
+        el.setAttribute("role", "button");
+        el.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openFrom(el); }
+        });
+      }
     });
 
-    document.querySelectorAll(".tv-shot").forEach(function (img) {
-      img.addEventListener("click", function () {
-        openLightbox(img.src, img.alt);
-      });
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();
     });
-    document.querySelectorAll(".tv-thumb").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        openLightbox(btn.getAttribute("data-full"), btn.getAttribute("data-alt"));
-      });
-    });
-
-    lightbox.addEventListener("click", closeLightbox);
-    document.getElementById("lightbox-close").addEventListener("click", function (e) {
-      e.stopPropagation();
-      closeLightbox();
-    });
+    closeBtn.addEventListener("click", closeLightbox);
+    prevBtn.addEventListener("click", function () { show(index - 1); });
+    nextBtn.addEventListener("click", function () { show(index + 1); });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+      if (lightbox.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft" && items.length > 1) show(index - 1);
+      else if (e.key === "ArrowRight" && items.length > 1) show(index + 1);
+      else if (e.key === "Tab") {
+        var f = [closeBtn, prevBtn, nextBtn].filter(function (b) { return !b.hidden; });
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  })();
+
+  // Nav: mobile menu, active section, back to top, copy email
+  (function () {
+    var btn = document.getElementById("menu-btn");
+    var menu = document.getElementById("mobile-menu");
+    function setMenu(open) {
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menu.hidden = !open;
+    }
+    btn.addEventListener("click", function () { setMenu(menu.hidden); });
+    menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !menu.hidden) { setMenu(false); btn.focus(); }
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth >= 768) setMenu(false); });
+
+    // Highlight the nav link for the section on screen. Case-study sections count as "Projects".
+    var map = { capabilities: "capabilities", work: "work", trusvana: "work", "automation-hub": "work", "veliora-stock": "work",
+                skills: "skills", tools: "tools", "associated-projects": "work", contact: "contact" };
+    var links = document.querySelectorAll(".nav-link");
+    function mark(id) {
+      var target = map[id];
+      links.forEach(function (a) {
+        if (target && a.getAttribute("href") === "#" + target) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) mark(en.target.id); });
+      }, { rootMargin: "-40% 0px -55% 0px" });
+      Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+      var top = document.getElementById("top");
+      if (top) new IntersectionObserver(function (en) { if (en[0].isIntersecting) mark(""); }, { rootMargin: "-40% 0px -55% 0px" }).observe(top);
+    }
+
+    var toTop = document.getElementById("to-top");
+    function onScroll() { toTop.hidden = window.scrollY < 900; }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener("click", function () { window.scrollTo({ top: 0 }); });
+
+    var copyBtn = document.getElementById("copy-email");
+    var status = document.getElementById("copy-status");
+    if (copyBtn) copyBtn.addEventListener("click", function () {
+      var email = copyBtn.getAttribute("data-email");
+      function done(ok) {
+        status.textContent = ok ? "Copied" : "Press Ctrl+C to copy";
+        setTimeout(function () { status.textContent = ""; }, 2500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(false); });
+      } else done(false);
     });
   })();
 
@@ -1158,8 +1435,28 @@
     var nextBtn = document.getElementById("marquee-next");
     if (!wrap || !track) return;
 
+    // Second half of the track is a visual duplicate for the loop: hide it from screen readers and the tab order.
+    var imgs = track.querySelectorAll("img");
+    for (var d = imgs.length / 2; d < imgs.length; d++) {
+      imgs[d].setAttribute("aria-hidden", "true");
+      imgs[d].removeAttribute("tabindex");
+      imgs[d].removeAttribute("role");
+    }
+
+    var pauseBtn = document.getElementById("marquee-pause");
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
+    if (reduceMotion) {
+      [pauseBtn, prevBtn, nextBtn].forEach(function (b) { if (b) b.hidden = true; });
+      return;
+    }
+    var userPaused = false;
+    pauseBtn.addEventListener("click", function () {
+      userPaused = !userPaused;
+      pauseBtn.textContent = userPaused ? "Play" : "Pause";
+      pauseBtn.setAttribute("aria-pressed", userPaused ? "true" : "false");
+    });
+    wrap.addEventListener("focusin", function () { paused = true; });
+    wrap.addEventListener("focusout", function () { paused = false; });
 
     var BASE_SPEED = 45;
     var BOOST_SPEED = 170;
@@ -1212,7 +1509,7 @@
       var dt = (time - lastTime) / 1000;
       lastTime = time;
 
-      if (!paused && half > 0) {
+      if (!paused && !userPaused && half > 0) {
         offset += direction * speed * dt;
         offset = ((offset % half) + half) % half;
         track.style.transform = "translateX(" + -offset + "px)";
@@ -1251,7 +1548,7 @@
       if (!id) return;
       btn.style.backgroundImage = "url(https://i.ytimg.com/vi/" + id + "/hqdefault.jpg)";
       btn.setAttribute("aria-label", "Play video: " + (btn.getAttribute("data-title") || "project video"));
-      btn.innerHTML = '<span class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#06120c" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
+      btn.innerHTML = '<span class="yt-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#f6fbf8" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
       btn.addEventListener("click", function () {
         var frame = document.createElement("iframe");
         frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
