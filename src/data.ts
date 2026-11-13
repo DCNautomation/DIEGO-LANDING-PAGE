@@ -7,7 +7,6 @@ export const strip = [
   { title: "Executive Support", note: "Inbox, calendar, travel, docs" },
   { title: "AI & Automation", note: "n8n, AI agents, webhooks, APIs" },
   { title: "CRM Systems", note: "HubSpot, Salesforce, GoHighLevel" },
-  { title: "Aviation Background", note: "Safety compliance & audits" },
 ]
 
 export const disciplines = [
