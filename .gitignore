@@ -1,6 +1,4 @@
-node_modules/
-temporary screenshots/
-.env
-.env.local
-.vercel
-reference/
+node_modules
+dist
+_tmp
+*.tsbuildinfo
