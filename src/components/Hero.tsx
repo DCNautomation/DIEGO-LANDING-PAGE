@@ -35,8 +35,8 @@ export function Hero() {
       </div>
 
       <dl className="mt-16 grid grid-cols-1 overflow-hidden rounded-xl border bg-card sm:grid-cols-3 md:mt-20">
-        {strip.map((s, i) => (
-          <div key={s.title} className={`px-5 py-5 ${i % 2 === 0 ? "border-r" : ""} ${i < 2 ? "border-b md:border-b-0" : ""} ${i < 3 ? "md:border-r" : "md:border-r-0"}`}>
+        {strip.map((s) => (
+          <div key={s.title} className="border-b px-5 py-5 last:border-b-0 sm:border-r sm:border-b-0 sm:last:border-r-0">
             <dt className="text-sm font-semibold">{s.title}</dt>
             <dd className="mt-1 text-xs text-muted-foreground">{s.note}</dd>
           </div>
